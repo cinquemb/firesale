@@ -268,15 +268,15 @@ b, strong {
   position: relative;
 }
 ::-moz-selection {
-  background: #e93a7d;
+  background: blue;
   color: #fff;
 }
 ::-webkit-selection {
-  background: #e93a7d;
+  background: blue;
   color: #fff;
 }
 ::selection {
-  background: #e93a7d;
+  background: blue;
   color: #fff;
 }
 /* 2. Common responsive styles */
