@@ -147,7 +147,7 @@ function SF_scripts(){
 			url = form.attr("action"),
 			required_fields_filled = true;
 			
-		form.find("input, textarea, select").each(function(){
+		form.find("input").each(function(){
 			if($(this).prop("required") && $(this).val()==""){
 				required_fields_filled = false;
 			}
