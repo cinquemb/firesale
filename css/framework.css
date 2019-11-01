@@ -9793,3 +9793,9 @@ input[type=radio] + label:before {
 .absolute {
   position: absolute;
 }
+@media (max-width: 575.98px) {
+  .absolute {
+    position: relative;
+    width: 100%;
+  }
+}

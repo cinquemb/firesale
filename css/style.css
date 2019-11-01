@@ -127,9 +127,6 @@ b, strong {
 [data-aos=fade-up] {
   transform: translate3d(0, 35px, 0);
 }
-.site_title {
-  font-family: 'Adobe Garamond Pro' !important;
-}
 /* Slick slider */
 .slick-list {
   /* background: #fff url("../i/ajax-loader.gif") center center no-repeat; */
@@ -534,7 +531,7 @@ b, strong {
 }
 .form_2 .bg {
   top: 0;
-  left: 15px;
+  left: 0;
 }
 @media (max-width: 1199.98px) {
   .form_2 form {
@@ -722,4 +719,8 @@ b, strong {
     width: 100%;
     max-width: 100%;
   }
+}
+
+.no-padding {
+  padding: 0;
 }
