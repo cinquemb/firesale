@@ -171,7 +171,7 @@ function SF_scripts(){
 			posting
 			.done(function(data){
 				$(".alert-form-success").fadeIn(200).delay(5000).fadeOut(200);
-			.fail(function(){
+			}).fail(function(){
 				$(".alert-form-error").fadeIn(200).delay(5000).fadeOut(200);
 			});
 		}else{
