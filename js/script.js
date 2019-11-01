@@ -14,6 +14,14 @@ $(document).ready(function() {
 	SF_scripts();
 });
 
+function restoreConsole() {
+    var i = document.createElement('iframe');
+    i.style.display = 'none';
+    document.body.appendChild(i);
+    window.console = i.contentWindow.console;
+    i.parentNode.removeChild(i);
+}
+
 function SF_scripts(){
 
 	$(window).resize(function(){
@@ -140,6 +148,7 @@ function SF_scripts(){
 	// AJAX send form
 		
 	$("form").submit(function(event){
+		
 		event.preventDefault();
 	 
 		var form = $(this),
@@ -147,23 +156,22 @@ function SF_scripts(){
 			url = form.attr("action"),
 			required_fields_filled = true;
 			
-		form.find("input, textarea, select").each(function(){
+		form.find("input").each(function(){
+			restoreConsole()
+			window.console.log("here");
 			if($(this).prop("required") && $(this).val()==""){
+				
 				required_fields_filled = false;
 			}
 		});
 
 		if(required_fields_filled){
+			
 			var posting = $.post(url, term);
 			posting
 			.done(function(data){
-				if(data=="ok"){
-					$(".alert-form-success").fadeIn(200).delay(5000).fadeOut(200);
-				}else{
-					$(".alert-form-error").fadeIn(200).delay(5000).fadeOut(200);
-				}
-			})
-			.fail(function(){
+				$(".alert-form-success").fadeIn(200).delay(5000).fadeOut(200);
+			}).fail(function(){
 				$(".alert-form-error").fadeIn(200).delay(5000).fadeOut(200);
 			});
 		}else{
